@@ -220,7 +220,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex w-12 h-12 items-center justify-center bg-white rounded-full transition-all duration-300"
+              className="inline-flex w-12 h-12 items-center justify-center bg-gray-50 rounded-full transition-all duration-300"
             >
               <FaLinkedin className="text-2xl text-blue-600" />
             </motion.a>
@@ -228,7 +228,7 @@ const Contact = () => {
 
           {/* Phone Number */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="flex items-center gap-4 bg-white px-6 py-4 rounded-lg">
+            <div className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-lg">
               <div className="w-12 h-12 flex items-center justify-center bg-green-50 rounded-full">
                 <FaPhone className="text-xl text-green-600" />
               </div>
@@ -240,7 +240,7 @@ const Contact = () => {
           <div className="flex items-center justify-center gap-4 mb-6">
             <a
               href="mailto:naveedahmeds313@gmail.com"
-              className="flex items-center gap-4 bg-white px-6 py-4 rounded-lg"
+              className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-lg"
             >
               <div className="w-12 h-12 flex items-center justify-center bg-red-50 rounded-full">
                 <FaEnvelope className="text-xl text-red-500" />
