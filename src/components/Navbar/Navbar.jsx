@@ -15,6 +15,20 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Disable scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
       { name: 'About', to: 'about' },
     { name: 'Skills', to: 'skills' },
@@ -23,11 +37,26 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+    <>
+      {/* Backdrop Overlay - Below Navbar */}
+      {isMobileMenuOpen && (
+        <motion.div
+          className="fixed bg-black/50 backdrop-blur-sm z-40 md:hidden"
+          style={{ top: '80px', left: 0, right: 0, bottom: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      <motion.nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/90 backdrop-blur-md shadow-lg'
+            : isMobileMenuOpen
+            ? 'bg-white shadow-lg'
+            : 'bg-transparent'
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -86,11 +115,11 @@ const Navbar = () => {
 
           {/* Resume Button - Desktop */}
           <motion.a
-            href="/Naveed_resume.pdf"
+            href="/portfolio/Naveed_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-            style={{ padding: '12px 24px' }}
+            className="hidden md:block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg text-sm"
+            style={{ padding: '10px 20px' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
@@ -133,46 +162,50 @@ const Navbar = () => {
           animate={isMobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="py-4 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                spy={true}
-                smooth={true}
-                duration={800}
-                offset={-80}
-                activeClass="text-blue-600 bg-blue-50"
-                className="cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <motion.div
-                  className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
-                  whileHover={{ x: 10 }}
-                  whileTap={{ scale: 0.95 }}
+          <div className="py-4">
+            {navLinks.map((link, index) => (
+              <div key={link.to} style={{ marginBottom: index < navLinks.length - 1 ? '20px' : '0' }}>
+                <Link
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  duration={800}
+                  offset={-80}
+                  activeClass="text-blue-600 bg-blue-50"
+                  className="cursor-pointer"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.name}
-                </motion.div>
-              </Link>
+                  <motion.div
+                    className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    whileHover={{ x: 10 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {link.name}
+                  </motion.div>
+                </Link>
+              </div>
             ))}
             
             {/* Resume Link - Mobile */}
-            <motion.a
-              href="/Naveed_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 text-center"
-              style={{ padding: '14px 16px' }}
-              onClick={() => setIsMobileMenuOpen(false)}
-              whileHover={{ x: 10 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Resume
-            </motion.a>
+            <div style={{ marginTop: '32px' }}>
+              <motion.a
+                href="/portfolio/Naveed_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 text-center text-sm"
+                style={{ padding: '10px 16px', maxWidth: '150px', margin: '0 auto', marginBottom: '16px' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                whileHover={{ x: 10 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Resume
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>
     </motion.nav>
+    </>
   );
 };
 
