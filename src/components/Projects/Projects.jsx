@@ -42,7 +42,7 @@ const Projects = () => {
       title: 'Advanced Task Management System',
       description: 'A full-stack task management platform with role-based access control, task assignment, progress tracking, analytics dashboards, and downloadable Excel reports. Features protected routes, CRUD operations, and profile management for streamlined team collaboration.',
       techStack: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-      githubLink: 'https://github.com/username/task-management',
+  githubLink: 'https://github.com/naveed689/Task-Manager',
       liveLink: 'https://demo-taskmanagement.com',
       gradient: 'from-blue-500 to-cyan-500'
     },
