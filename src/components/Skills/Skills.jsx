@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaJava, FaPython, FaBootstrap, FaCode } from 'react-icons/fa';
-import { SiMysql, SiMongodb, SiCplusplus } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaJava, FaBootstrap } from 'react-icons/fa';
+import { SiMysql, SiMongodb, SiC } from 'react-icons/si';
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -75,11 +75,11 @@ const Skills = () => {
       description: 'OOP & Backend Development'
     },
     {
-      name: 'Python',
-      icon: FaPython,
-      color: 'from-green-400 to-green-600',
-      iconColor: '#3776AB',
-      description: 'Scripting & Data Analysis'
+      name: 'C',
+      icon: SiC,
+      color: 'from-indigo-400 to-indigo-600',
+      iconColor: '#00599C',
+      description: 'Procedural programming & Data Structures'
     },
     {
       name: 'MySQL',
@@ -96,25 +96,11 @@ const Skills = () => {
       description: 'NoSQL & Document Storage'
     },
     {
-      name: 'VS Code',
-      icon: FaCode,
-      color: 'from-blue-600 to-blue-800',
-      iconColor: '#007ACC',
-      description: 'Productivity & Extensions'
-    },
-    {
       name: 'Bootstrap',
       icon: FaBootstrap,
       color: 'from-purple-400 to-purple-600',
       iconColor: '#7952B3',
       description: 'Responsive UI Framework'
-    },
-    {
-      name: 'C++',
-      icon: SiCplusplus,
-      color: 'from-indigo-400 to-indigo-600',
-      iconColor: '#00599C',
-      description: 'Systems Programming & DSA'
     },
   ];
 
