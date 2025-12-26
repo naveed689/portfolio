@@ -42,14 +42,14 @@ const Hero = () => {
 
       {/* Main Content */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 md:px-12 lg:px-24 py-16"
+        className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 md:px-12 lg:px-24 py-16 "
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Heading with fade-in animation */}
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 text-center mb-6 md:mb-8 leading-tight"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 text-center  leading-tight"
           variants={itemVariants}
         >
           Hi, I'm{' '}
@@ -66,7 +66,7 @@ const Hero = () => {
 
         {/* Subheading with typing effect */}
         <motion.div
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-700 text-center mb-12 md:mb-16 lg:mb-20 min-h-[4rem] md:min-h-[5rem] flex items-center justify-center"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-700 text-center   min-h-[4rem] md:min-h-[5rem] flex items-center justify-center"
           variants={itemVariants}
         >
           <TypingEffect 

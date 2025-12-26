@@ -88,8 +88,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="relative min-h-screen w-full bg-gray-50 py-20 md:py-28 lg:py-36 px-6 md:px-12 lg:px-24 flex items-center justify-center"
-      style={{ marginTop: '240px' }}
+      className="relative min-h-screen w-full bg-gray-50 mb-0 md:py-10 lg:py-14 px-6 md:px-12 lg:px-24 flex items-center justify-center mt-45"
     >
       <div className="max-w-7xl w-full mx-auto">
         {/* Section Header */}
@@ -111,7 +110,7 @@ const Contact = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600"
-            style={{ marginBottom: '80px', maxWidth: '768px', textAlign: 'center' }}
+            style={{ marginBottom: '40px', maxWidth: '768px', textAlign: 'center' }}
           >
             Have a question? Feel free to reach out!
           </motion.p>
@@ -210,10 +209,10 @@ const Contact = () => {
         </div>
 
         {/* Contact Information */}
-        <motion.div variants={itemVariants} className="mt-16">
+        <motion.div variants={itemVariants} className="mt-8">
           {/* LinkedIn */}
-          <motion.div className="text-center mb-8">
-            <p className="text-gray-600 mb-4">Connect with me on:</p>
+          <motion.div className="text-center ">
+            <p className="text-gray-600">Connect with me on:</p>
             <motion.a
               href="https://www.linkedin.com/in/naveedahmeds/"
               target="_blank"
@@ -227,8 +226,8 @@ const Contact = () => {
           </motion.div>
 
           {/* Phone Number */}
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-lg">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center gap-4 bg-gray-50 px-6 rounded-lg">
               <div className="w-12 h-12 flex items-center justify-center bg-green-50 rounded-full">
                 <FaPhone className="text-xl text-green-600" />
               </div>
@@ -237,10 +236,10 @@ const Contact = () => {
           </div>
 
           {/* Email */}
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="flex items-center justify-center gap-4">
             <a
               href="mailto:naveedahmeds313@gmail.com"
-              className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-lg"
+              className="flex items-center gap-4 bg-gray-50 px-6  rounded-lg"
             >
               <div className="w-12 h-12 flex items-center justify-center bg-red-50 rounded-full">
                 <FaEnvelope className="text-xl text-red-500" />

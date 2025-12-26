@@ -33,8 +33,8 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="relative min-h-screen w-full bg-white py-32 md:py-40 lg:py-48 px-6 md:px-12 lg:px-24 flex items-center justify-center"
-      style={{ marginTop: '160px' }}
+      className="relative min-h-screen w-full bg-white py-12 md:py-16 lg:py-20 px-6 md:px-12 lg:px-24 flex items-center justify-center"
+  style={{ marginTop: '30px' }}
     >
       <motion.div
         ref={ref}
@@ -52,11 +52,11 @@ const About = () => {
           About <span className="text-blue-600">Me</span>
         </motion.h2>
 
-        {/* Description Lines */}
-        <div className="space-y-8">
+    {/* Description Lines */}
+    <div className="space-y-4">
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed"
+      className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-normal"
           >
             Motivated IT undergraduate from Anna University with a solid grasp of
             Data Structures and Algorithms.
@@ -64,14 +64,14 @@ const About = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-normal"
           >
             Passionate about problem-solving and building impactful tech solutions.
           </motion.p>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-normal"
           >
             Quick learner with a strong interest in emerging technologies and continuous self-improvement.
           </motion.p>

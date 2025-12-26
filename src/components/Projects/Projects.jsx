@@ -42,7 +42,7 @@ const Projects = () => {
       title: 'Advanced Task Management System',
       description: 'A full-stack task management platform with role-based access control, task assignment, progress tracking, analytics dashboards, and downloadable Excel reports. Features protected routes, CRUD operations, and profile management for streamlined team collaboration.',
       techStack: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-  githubLink: 'https://github.com/naveed689/Task-Manager',
+      githubLink: 'https://github.com/naveed689/Task-Manager',
       liveLink: 'https://demo-taskmanagement.com',
       gradient: 'from-blue-500 to-cyan-500'
     },
@@ -57,7 +57,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="relative min-h-screen w-full bg-white py-20 md:py-28 lg:py-36 px-6 md:px-12 lg:px-24 flex items-center justify-center" style={{ marginTop: '240px' }}>
+  <section id="projects" className="relative min-h-screen w-full bg-white py-8 md:py-10 lg:py-14 px-6 md:px-12 lg:px-24 flex items-center justify-center mt-45">
       <div className="max-w-7xl w-full mx-auto">
         {/* Section Header */}
         <div className="text-center w-full flex flex-col items-center">

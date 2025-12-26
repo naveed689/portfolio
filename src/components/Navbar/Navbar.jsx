@@ -53,16 +53,16 @@ const Navbar = () => {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-lg'
+            ? 'bg-white/70 backdrop-blur-md shadow-lg'
             : isMobileMenuOpen
-            ? 'bg-white shadow-lg'
-            : 'bg-transparent'
+            ? 'bg-white/70 backdrop-blur-md shadow-lg'
+            : 'bg-white/10 backdrop-blur-sm'
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+  <div className="max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Name */}
           <Link
@@ -71,7 +71,6 @@ const Navbar = () => {
             smooth={true}
             duration={800}
             className="cursor-pointer flex-shrink-0"
-            style={{ transform: "translateX(30%)"}}
           >
             <motion.div
               className="text-2xl md:text-3xl font-bold text-gray-900"
@@ -83,7 +82,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-8 absolute left-1/2 transform -translate-x-1/2">
+      <div className="hidden md:flex items-center gap-4 lg:gap-4 absolute inset-x-0 justify-center pointer-events-none">
             {navLinks.map((link, index) => (
               <Link
                 key={link.to}
@@ -93,7 +92,7 @@ const Navbar = () => {
                 duration={800}
                 offset={-80}
                 activeClass="text-blue-600"
-                className="cursor-pointer"
+        className="cursor-pointer pointer-events-auto"
               >
                 <motion.div
                   className="px-3 py-2 text-gray-700 font-medium rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
@@ -113,18 +112,18 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Resume Button - Desktop */}
+          {/* Resume Button - Desktop (fixed corner) */}
           <motion.a
             href="/portfolio/Naveed_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg text-sm"
+            className="hidden md:block fixed right-6 top-4 z-50 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg text-sm"
             style={{ padding: '10px 20px' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
           >
             Resume
           </motion.a>
@@ -164,7 +163,7 @@ const Navbar = () => {
         >
           <div className="py-4">
             {navLinks.map((link, index) => (
-              <div key={link.to} style={{ marginBottom: index < navLinks.length - 1 ? '20px' : '0' }}>
+              <div key={link.to} style={{ marginBottom: index < navLinks.length - 1 ? '1px' : '0' }}>
                 <Link
                   to={link.to}
                   spy={true}
@@ -176,7 +175,7 @@ const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <motion.div
-                    className="block px-4 py-3 text-gray-700 font-medium rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    className="block px-3 py-2.5 text-gray-700 font-medium rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
                     whileHover={{ x: 10 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -187,15 +186,15 @@ const Navbar = () => {
             ))}
             
             {/* Resume Link - Mobile */}
-            <div style={{ marginTop: '32px' }}>
+            <div style={{ marginTop: '16px' }}>
               <motion.a
                 href="/portfolio/Naveed_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 text-center text-sm"
-                style={{ padding: '10px 16px', maxWidth: '150px', margin: '0 auto', marginBottom: '16px' }}
+                style={{ padding: '10px 16px', maxWidth: '150px', margin: '0 auto', marginBottom: '8px' }}
                 onClick={() => setIsMobileMenuOpen(false)}
-                whileHover={{ x: 10 }}
+                
                 whileTap={{ scale: 0.95 }}
               >
                 View Resume

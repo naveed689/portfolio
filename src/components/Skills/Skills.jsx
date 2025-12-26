@@ -119,7 +119,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="relative min-h-screen w-full bg-gray-50 py-20 md:py-28 lg:py-36 px-6 md:px-12 lg:px-24 flex items-center justify-center">
+  <section id="skills" className="relative min-h-screen w-full bg-gray-50 py-8 md:py-10 lg:py-14 px-6 md:px-12 lg:px-24 flex items-center justify-center mt-14">
       <div className="max-w-7xl w-full mx-auto">
         {/* Section Header */}
         <div className="text-center w-full flex flex-col items-center">
@@ -138,7 +138,7 @@ const Skills = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg sm:text-xl md:text-2xl text-gray-600"
-            style={{ marginBottom: '80px', maxWidth: '768px', textAlign: 'center' }}
+            style={{ marginBottom: '46px', maxWidth: '768px', textAlign: 'center' }}
           >
             Technologies and tools I work with to bring ideas to life
           </motion.p>
@@ -150,7 +150,7 @@ const Skills = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 place-items-center"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  place-items-center"
           style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}
         >
           {skills.map((skill, index) => {
@@ -166,9 +166,9 @@ const Skills = () => {
                 }}
                 className="relative group w-full max-w-xs"
               >
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200/50 h-full flex flex-col items-center text-center">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200/50 h-full flex flex-col items-center text-center">
                   {/* Icon with React Icons */}
-                  <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                  <div className="w-20 h-20 mt-[8px] rounded-2xl bg-white/80 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent 
                       className="w-16 h-16"
                       style={{ color: skill.iconColor }}
@@ -176,12 +176,12 @@ const Skills = () => {
                   </div>
 
                   {/* Skill Name */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {skill.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-normal">
                     {skill.description}
                   </p>
                 </div>
@@ -195,7 +195,7 @@ const Skills = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          style={{ marginTop: '70px', textAlign: 'center' }}
+          style={{ marginTop: '40px', textAlign: 'center' }}
         >
           <motion.div 
             style={{
