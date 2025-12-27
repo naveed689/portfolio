@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaJava, FaBootstrap } from 'react-icons/fa';
-import { SiMysql, SiMongodb, SiC } from 'react-icons/si';
+import { SiMysql, SiMongodb, SiC, SiNodedotjs } from 'react-icons/si';
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -59,6 +59,13 @@ const Skills = () => {
       color: 'from-yellow-400 to-yellow-600',
       iconColor: '#F7DF1E',
       description: 'ES6+ & async programming'
+    },
+    {
+      name: 'Node.js',
+      icon: SiNodedotjs,
+      color: 'from-green-500 to-green-700',
+      iconColor: '#339933',
+      description: 'Server-side JavaScript & APIs'
     },
     {
       name: 'React',
